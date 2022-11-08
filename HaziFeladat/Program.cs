@@ -11,16 +11,18 @@ namespace HaziFeladat
         static void Main(string[] args)
         {
             string adatok = "10;5;7";
+            string temp = "";
 
             for (int i = 0; i < adatok.Length; i++)
             {
                 if (adatok[i] == ';')
                 {
-                    Console.WriteLine();
+                    Console.WriteLine(Convert.ToInt32(temp) * 2);
+                    temp = "";
                 }
                 else
                 {
-                    Console.Write(Convert.ToInt32(adatok[i].ToString())*2);
+                    temp += adatok[i];
                 }
             }
 
@@ -36,7 +38,8 @@ namespace HaziFeladat
 
             //    }
             //}
-
+            
+            Console.Write(Convert.ToInt32(temp) * 2);
             Console.ReadKey();
         }
     }
